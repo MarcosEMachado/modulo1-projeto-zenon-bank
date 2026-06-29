@@ -1,5 +1,6 @@
 package main.java.br.com.zenon;
 
+import main.java.br.com.zenon.service.FraudAnalyzer;
 import main.java.br.com.zenon.service.TransactionIngestor;
 
 import java.nio.file.Path;
@@ -12,7 +13,8 @@ public class Main {
     public static void main(String[] args) {
 
         var ingestor = new TransactionIngestor();
-        var lista = ingestor.csvToList(CSV_PATH_TEST);
-        lista.stream().toList().forEach(System.out::println);
+        var lista = ingestor.csvToList(CSV_PATH);
+        var analyzer = new FraudAnalyzer();
+        analyzer.analizarFraudesTransacoes(lista);
     }
 }

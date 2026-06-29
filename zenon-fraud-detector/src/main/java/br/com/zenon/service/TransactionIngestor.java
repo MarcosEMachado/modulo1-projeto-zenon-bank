@@ -17,7 +17,6 @@ public class TransactionIngestor {
         try (BufferedReader br = Files.newBufferedReader(path)) {
             String line;
             br.readLine();
-            var contErr = 0;
             var list = new ArrayList<Transaction>();
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
@@ -32,17 +31,14 @@ public class TransactionIngestor {
                             parts[6],
                             Double.parseDouble(parts[7]),
                             Double.parseDouble(parts[8]),
-                            Boolean.parseBoolean(parts[9]),
-                            Boolean.parseBoolean(parts[10])
+                            parts[9].equals("1"),
+                            parts[10].equals("1")
                     );
                     list.add(transacao);
-                    if (list.size() == 1000)
+                    if (list.size() == 50000)
                         break;
-                } else {
-                    contErr++;
                 }
             }
-            System.out.println(contErr);
             return list;
         } catch (Exception e) {
             throw new RuntimeException(e);
