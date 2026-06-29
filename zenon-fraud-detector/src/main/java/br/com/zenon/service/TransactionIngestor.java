@@ -35,7 +35,7 @@ public class TransactionIngestor {
                             parts[10].equals("1")
                     );
                     list.add(transacao);
-                    if (list.size() == 50000)
+                    if (list.size() == 100000)
                         break;
                 }
             }
