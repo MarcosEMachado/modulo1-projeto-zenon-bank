@@ -1,7 +1,7 @@
 package main.java.br.com.zenon.fraud;
 
 public record Transaction(int step,
-                          String type,
+                          TransactionType type,
                           double amount,
                           String nameOrig,
                           double oldbalanceOrg,
