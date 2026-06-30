@@ -4,7 +4,6 @@ import main.java.br.com.zenon.fraud.Transaction;
 import main.java.br.com.zenon.service.TransactionIngestor;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Optional;
 
 public class TransactionListRepository implements TransactionRepository {
