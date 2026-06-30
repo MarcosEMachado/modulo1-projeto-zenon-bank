@@ -1,4 +1,4 @@
-package main.java.br.com.zenon.fraud;
+package br.com.zenon.fraud;
 
 public record Transaction(int step,
                           TransactionType type,

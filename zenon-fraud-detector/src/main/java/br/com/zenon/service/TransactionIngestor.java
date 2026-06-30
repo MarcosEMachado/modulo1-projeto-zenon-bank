@@ -1,7 +1,7 @@
-package main.java.br.com.zenon.service;
+package br.com.zenon.service;
 
-import main.java.br.com.zenon.fraud.Transaction;
-import main.java.br.com.zenon.fraud.TransactionType;
+import br.com.zenon.fraud.Transaction;
+import br.com.zenon.fraud.TransactionType;
 
 import java.io.BufferedReader;
 import java.nio.file.Files;

@@ -1,10 +1,10 @@
-package main.java.br.com.zenon;
+package br.com.zenon;
 
-import main.java.br.com.zenon.fraud.Transaction;
-import main.java.br.com.zenon.repository.TransactionListRepository;
-import main.java.br.com.zenon.repository.TransactionMapRepository;
-import main.java.br.com.zenon.repository.TransactionRepository;
-import main.java.br.com.zenon.service.TransactionIngestor;
+import br.com.zenon.fraud.Transaction;
+import br.com.zenon.repository.TransactionListRepository;
+import br.com.zenon.repository.TransactionMapRepository;
+import br.com.zenon.repository.TransactionRepository;
+import br.com.zenon.service.TransactionIngestor;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

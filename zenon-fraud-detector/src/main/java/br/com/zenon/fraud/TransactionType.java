@@ -1,4 +1,4 @@
-package main.java.br.com.zenon.fraud;
+package br.com.zenon.fraud;
 
 public enum TransactionType {
     CASH_IN,

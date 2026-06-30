@@ -1,9 +1,12 @@
-package main.java.br.com.zenon;
+package br.com.zenon;
 
-import main.java.br.com.zenon.service.TransactionReport;
+import br.com.zenon.service.TransactionReport;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class ReportMain {
 
@@ -11,12 +14,20 @@ public class ReportMain {
     final static TransactionReport transactionReport = new TransactionReport(CSV_PATH);
 
     public static void main(String[] args) {
-        var totalLinhas = transactionReport.contar();
-        var totalFraudes = transactionReport.contarFraudes();
-        var totalTransferencias = transactionReport.somarValoresTransferencias();
 
-        System.out.println("Total de linhas: " + totalLinhas);
-        System.out.println("Total de fraudes: " + totalFraudes);
-        System.out.println("Valor total transacionado: " + String.format("%.2f", totalTransferencias));
+        String lang = "en";
+        Locale locale = "en".equals(lang) ? Locale.US : Locale.of("pt", "BR");
+
+        ResourceBundle bundle = ResourceBundle.getBundle("report", locale);
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(locale);
+        NumberFormat currencyFmt = NumberFormat.getCurrencyInstance(locale);
+
+        var totalLinhas = numberFormat.format(transactionReport.contar());
+        var totalFraudes = numberFormat.format(transactionReport.contarFraudes());
+        var totalTransferencias = currencyFmt.format(transactionReport.somarValoresTransferencias());
+
+        System.out.println(bundle.getString("total.lines") + ": " + totalLinhas);
+        System.out.println(bundle.getString("total.frauds") + ": " + totalFraudes);
+        System.out.println(bundle.getString("total.value") + ": " + totalTransferencias);
     }
 }

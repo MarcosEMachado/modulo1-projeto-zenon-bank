@@ -1,6 +1,6 @@
-package main.java.br.com.zenon.service;
+package br.com.zenon.service;
 
-import main.java.br.com.zenon.fraud.Transaction;
+import br.com.zenon.fraud.Transaction;
 
 import java.util.List;
 import java.util.stream.Collectors;
